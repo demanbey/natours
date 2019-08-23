@@ -5,6 +5,13 @@ const handleCastErrorDB = err => {
     return new AppError(message, 404)
 };
 
+// const handleDuplicateFieldsDB = err => {
+//     const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
+
+//     const message = `Duplicate field value: x. Please use another value!`;
+//     return new AppError(message, 400);
+// }
+
 const sendErrorDev = (err, res) => {
     res.status(err.statusCode).json({
         status: err.status,
